@@ -5,13 +5,15 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
+                    <div class="card-header">Welcome</div>
 
                     <div class="card-body">
-                        This is lifetime application
+                        <ul id="users"></ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
+

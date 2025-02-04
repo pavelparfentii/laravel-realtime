@@ -14,6 +14,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <!-- Styles -->
     @stack('styles')
@@ -81,7 +82,8 @@
         </main>
     </div>
     <!-- Scripts -->
-    @stack('scrips')
+    @stack('scripts')
     <script src="{{ asset('js/app.js') }}" ></script>
+
 </body>
 </html>
