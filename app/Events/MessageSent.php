@@ -11,12 +11,11 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class UserCreated implements ShouldBroadcast
+class MessageSent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public $user;
-
     public $message;
     /**
      * Create a new event instance.
@@ -26,7 +25,7 @@ class UserCreated implements ShouldBroadcast
     public function __construct(User $user, $message)
     {
         $this->user = $user;
-
+        $this->message = $message;
     }
 
     /**
@@ -36,7 +35,7 @@ class UserCreated implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-//        \Log::debug("User {$this->user->name} created");
-        return new Channel('users');
+        \Log::debug("User {$this->user->name} sent {$this->message}");
+        return new PresenceChannel('chat');
     }
 }
