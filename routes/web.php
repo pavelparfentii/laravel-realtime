@@ -28,3 +28,5 @@ Route::view('/game', 'games.show')->name('games.show');
 
 Route::get('/chat', [App\Http\Controllers\ChatController::class, 'showChat'])->name('chat.index');
 Route::post('/chat/message', [App\Http\Controllers\ChatController::class, 'messageReceived'])->name('chat.message');
+
+Route::post('/chat/greet/{user}', [App\Http\Controllers\ChatController::class, 'greetReceived'])->name('greet.message');
